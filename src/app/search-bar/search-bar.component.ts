@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FeedViewComponent } from '../feed-view/feed-view.component';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { FeedService } from '../services/feed.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,17 +7,25 @@ import { FeedViewComponent } from '../feed-view/feed-view.component';
   styleUrls: ['./search-bar.component.css']
 })
 
-export class SearchBarComponent {
+@Injectable({
+  providedIn: 'root'
+})
+export class SearchBarComponent implements OnInit {
   title = 'Flickr Feed Viewer';
   tags: string;
 
-  constructor(private feedViewer: FeedViewComponent) { }
+  constructor(private feedService: FeedService) { }
+
+  ngOnInit(): void {
+    // search recent feed with no tags
+    this.onSearch();
+  }
 
   onSearch(): void {
     let searchTag = this.tags;
     if (searchTag) {
       searchTag = searchTag.trim();
     }
-    this.feedViewer.getFeed(searchTag);
+    this.feedService.getFeed(searchTag);
   }
 }

@@ -9,7 +9,10 @@ import * as config from './config.json';
 })
 export class FeedService {
 
+  // feed server's end-point
   private url = config.feed_url;
+
+  // setting this as observable so that view can be updated every time there is change in value
   private dataSource = new BehaviorSubject(new PhotoFeedModel());
   photoFeed = this.dataSource.asObservable();
 

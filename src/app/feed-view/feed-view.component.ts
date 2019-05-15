@@ -18,19 +18,9 @@ export class FeedViewComponent implements OnInit {
   constructor(private feedService: FeedService) { }
 
   ngOnInit(): void {
+    // subscribe to photoFeed on feedService to update view every time it changes
     this.feedService.photoFeed.subscribe(data => {
       this.photoFeed = data;
     });
-
-    this.getPhotoFeed();
   }
-
-  getFeed(tags: string): void {
-    this.getPhotoFeed(tags);
-  }
-
-  private getPhotoFeed(tags?: string): void {
-    this.feedService.getFeed(tags);
-  }
-
 }
