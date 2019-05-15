@@ -10,3 +10,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 $ npm install
 $ ng serve --port 4200 --open
 ```
+
+## Build for production
+```jshelllanguage
+$ ng build --prod
+```
