@@ -1,0 +1,15 @@
+<div class="search-header pt-3">
+  <h3>{{title}}</h3>
+
+  <form id="feed-search-component" class="form-row">
+    <div class="form-group mx-auto">
+      <input class="form-control" type="text"
+             name="tags" placeholder="e.g. cat, house, ..."
+             [(ngModel)]="tags" (keyup.enter)="onSearch()">
+      <br>
+      <button class="btn btn-secondary" type="button" (click)="onSearch()">
+        Search
+      </button>
+    </div>
+  </form>
+</div>

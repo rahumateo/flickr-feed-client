@@ -1,0 +1,7 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.search-header {
+  background-color: darkslategrey;
+  color: whitesmoke;
+  text-align: center;
+}
