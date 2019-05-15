@@ -24,6 +24,8 @@ export class FeedService {
       searchUrl += '?tags=' + tags;
     }
 
+    console.log(searchUrl);
+    // search feed and update photoFeed object
     this.httpClient.get(searchUrl)
       .subscribe(
         (photoFeed: PhotoFeedModel) => {
